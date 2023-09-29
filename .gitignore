@@ -1,0 +1,9 @@
+# PDF
+*.pdf
+
+# checker
+checker_linux*
+
+# .a, .o
+*.a
+*.o
