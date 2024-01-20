@@ -34,7 +34,7 @@ all:	$(NAME)
 
 $(NAME):	$(OBJS)
 	@ar rcs $(NAME) $(OBJS)
-	@echo "Linked into static lib \033[0;32mfdf\033[0m."
+	@echo "Linked into static lib \033[0;32mlibft\033[0m."
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -o $@ -c $< -I.
