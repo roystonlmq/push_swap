@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:24:20 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/21 16:12:57 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/21 16:16:56 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 create_stack
 First argument should be top of the stack
 */
-static void	create_node(t_node *node, int idx, int val)
+void	create_node(t_node *node, int idx, int val)
 {
 	int	i;
 	node = (t_node *)malloc(sizeof(t_node));
@@ -48,7 +48,7 @@ void	init_stacks(t_data *data, int argc, char **argv)
 	stack_a->size = argc - 1;
 	stack_b->size = 0;
 	stack_a->head = create_node(stack_a->head, 0, ft_atoi(argv[1]));
-	stack_a->tail = create_node(stack_a->tail, argc - 1, 
+	stack_a->tail = create_node(stack_a->tail, argc - 1,
 			ft_atoi(argv[argc - 1]));
 }
 
