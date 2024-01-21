@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:10:25 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/21 16:18:35 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/21 16:19:27 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void			fill_stack(t_data *data, int argc, char **argv);
 /*
 check.c
 */
-static int		check_dup(int argc, char **argv);
 void			check_args(int argc, char **argv);
 
 /*
