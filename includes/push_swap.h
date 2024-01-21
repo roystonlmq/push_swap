@@ -8,6 +8,7 @@
 /*
 check.c
 */
+void	check_dup(int argc, char **argv);
 void	check_args(int argc, char **argv);
 
 /*

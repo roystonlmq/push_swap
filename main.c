@@ -1,6 +1,7 @@
 #include "push_swap.h"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	ft_printf("hello %% \n", 42);
+	check_dup(argc, argv);
+	//check_args(argc, argv);
 }
