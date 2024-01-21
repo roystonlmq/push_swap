@@ -6,9 +6,11 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:50:31 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/21 16:53:19 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/21 19:02:17 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 /*
 rot: rotate a stack - shift all elements in that stack up by 1. The first
@@ -16,15 +18,17 @@ element becomes the last one.
 */
 void	rot(t_stack *stack)
 {
-	t_node	*node;
+	t_node	*head;
 
-	node = stack->head;
+	if (stack == NULL || stack->next == NULL)
+		return ;
+	head = stack->head;
 	stack->head = stack->head->next;
 	stack->head->prev = NULL;
-	node->next = NULL;
-	stack->tail->next = node;
-	node->prev = stack->tail;
-	stack->tail = node;
+	head->next = NULL;
+	head->prev = stack->tail;
+	stack->tail->next = head;
+	stack->tail = head;
 }
 
 /*
