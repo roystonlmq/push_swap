@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:24:02 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/21 16:13:02 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/21 16:17:54 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ int	main(int argc, char **argv)
 	data = init_data(argc);
 	init_stacks(data, argc, argv);
 	fill_stack(data->stack_a, argc, argv);
+	print_stack(data->stack_a);
 	// sort(&stack_a, &stack_b);
 }
