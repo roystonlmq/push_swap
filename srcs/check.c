@@ -6,13 +6,13 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 01:06:52 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/21 01:19:43 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/21 14:09:43 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_dup(int argc, char **argv)
+static int	check_dup(int argc, char **argv)
 {
 	int	len;
 	int	arr[argc];
@@ -30,8 +30,11 @@ void	check_dup(int argc, char **argv)
 		{
 			if (arr[len] == arr[i])
 				ft_error();
+			if (arr[len] > INT_MAX || arr[len] < INT_MIN)
+				ft_error();
 		}
 	}
+	return (0);
 }
 
 /*
@@ -46,22 +49,19 @@ void	check_args(int argc, char **argv)
 {
 	int		i;
 	int		j;
-	int		k;
-	char	**split;
 
-	i = 0;
-	while (++i < argc)
+	i = argc;
+	while (--i > 0)
 	{
-		j = -1;
-		split = ft_split(argv[i], ' ');
-		while (split[++j])
+		j = ft_strlen(argv[i]);
+		while (--j > 0)
 		{
-			k = -1;
-			while (split[j][++k])
-			{
-				if (!ft_isdigit(split[j][k]) && split[j][k] != '-')
-					ft_error();
-			}
+			if (ft_isdigit(argv[i][j]) == 0)
+				ft_error();
+			if (argv[i][j] == '-' && j != 0)
+				ft_error();
+			if (check_dup(argc, argv) == 0)
+				ft_error();
 		}
 	}
 }
