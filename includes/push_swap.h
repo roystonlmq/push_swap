@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:10:25 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/21 16:27:41 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/21 16:54:13 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,11 @@ load.c
 */
 void			fill_stack(t_stack *stack, int argc, char **argv);
 
+/*
+rotate.c
+*/
+void			rot(t_stack *stack);
+void			rrot(t_data *data);
 
 /*
 check.c
