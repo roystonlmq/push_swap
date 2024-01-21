@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 01:06:52 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/21 14:09:43 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/21 16:24:59 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ void	check_args(int argc, char **argv)
 	int		i;
 	int		j;
 
+	if (argc == 1)
+		ft_error();
 	i = argc;
 	while (--i > 0)
 	{
