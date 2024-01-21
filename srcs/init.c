@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:24:20 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/21 16:16:56 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/21 16:27:19 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@
 create_stack
 First argument should be top of the stack
 */
-void	create_node(t_node *node, int idx, int val)
+t_node	*create_node(int idx, int val)
 {
-	int	i;
+	t_node *node;
+
 	node = (t_node *)malloc(sizeof(t_node));
 	if (!node)
 		ft_error();
@@ -26,6 +27,7 @@ void	create_node(t_node *node, int idx, int val)
 	node->prev = NULL;
 	node->val = val;
 	node->idx = idx;
+	return (node);
 }
 
 void	init_stacks(t_data *data, int argc, char **argv)
@@ -47,9 +49,8 @@ void	init_stacks(t_data *data, int argc, char **argv)
 	stack_b->head = NULL;
 	stack_a->size = argc - 1;
 	stack_b->size = 0;
-	stack_a->head = create_node(stack_a->head, 0, ft_atoi(argv[1]));
-	stack_a->tail = create_node(stack_a->tail, argc - 1,
-			ft_atoi(argv[argc - 1]));
+	stack_a->head = create_node(0, ft_atoi(argv[1]));
+	stack_a->tail = create_node(argc - 1, t_atoi(argv[argc - 1]));
 }
 
 t_data	*init_data(int argc)
@@ -59,8 +60,6 @@ t_data	*init_data(int argc)
 	data = (t_data *)malloc(sizeof(t_data));
 	if (!data)
 		ft_error();
-	data->stack_a = stack_a;
-	data->stack_b = stack_b;
 	data->argc = argc;
 	return (data);
 }

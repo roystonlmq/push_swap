@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:10:25 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/21 16:19:27 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/21 16:27:41 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ typedef struct s_data
 init.c
 */
 t_data			*init_data(int argc);
-void			create_node(t_node *node, int idx, int val);
+t_node			*create_node(int idx, int val);
 void			init_stacks(t_data *data, int argc, char **argv);
 
 /*
 load.c
 */
-void			fill_stack(t_data *data, int argc, char **argv);
+void			fill_stack(t_stack *stack, int argc, char **argv);
 
 
 /*
