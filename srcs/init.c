@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:24:20 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/21 16:28:35 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/21 16:42:35 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,16 @@ void	init_stacks(t_data *data, int argc, char **argv)
 	stack_b = (t_stack *)malloc(sizeof(t_stack));
 	if (!stack_b)
 		ft_error();
-	data = (t_data *)malloc(sizeof(t_data));
-	if (!data)
-		ft_error();
-	data->stack_a = stack_a;
-	data->stack_b = stack_b;
 	stack_b->head = NULL;
 	stack_a->size = argc - 1;
 	stack_b->size = 0;
 	stack_a->head = create_node(0, ft_atoi(argv[1]));
-	stack_a->tail = create_node(argc - 1, ft_atoi(argv[argc - 1]));
+	if (stack_a->size > 1)
+		stack_a->tail = create_node(argc - 1, ft_atoi(argv[argc - 1]));
+	else
+		exit(0);
+	data->stack_a = stack_a;
+	data->stack_b = stack_b;
 }
 
 t_data	*init_data(int argc)
