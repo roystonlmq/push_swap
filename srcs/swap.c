@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/21 14:24:02 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/23 01:28:26 by roylee           ###   ########.fr       */
+/*   Created: 2024/01/23 01:22:09 by roylee            #+#    #+#             */
+/*   Updated: 2024/01/23 01:28:19 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+/*
+swap:
+	swap the first 2 elements at the top of a stack. Do nothing
+	if there is only one or no elements.
+*/
+void	swap(t_stack *stack)
 {
-	t_data	*data;
+	int tmp;
 
-	check_args(argc, argv);
-	data = init_data(argc);
-	init_stacks(data, argc, argv);
-	fill_stack(data->stack_a, argc, argv);
-	rot(data->stack_a);
+	if (stack->size > 1)
+	{
+		tmp = stack->head->val;
+		stack->head->val = stack->head->next->val;
+		stack->head->next->val = tmp;
+	}
+}
+
+void	swap_data(t_data *data)
+{
 	swap(data->stack_a);
-	print_stack(data->stack_a);
-	// sort(&stack_a, &stack_b);
+	swap(data->stack_b);
 }

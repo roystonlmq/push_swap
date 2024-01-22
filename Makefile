@@ -6,7 +6,7 @@
 #    By: roylee <roylee@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/01 16:22:42 by sgoffaux          #+#    #+#              #
-#    Updated: 2024/01/21 16:55:01 by roylee           ###   ########.fr        #
+#    Updated: 2024/01/23 01:26:51 by roylee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,24 +19,24 @@ INCLUDE 	=	includes
 CFLAGS		=	-Wall -Wextra -Werror -I$(INCLUDE) -g
 RM			=	rm -f
 SRCS		=	main.c srcs/check.c srcs/error.c srcs/init.c srcs/load.c \
-				srcs/print.c srcs/rotate.c
+				srcs/print.c srcs/rotate.c srcs/swap.c
 
 OBJS		=	$(SRCS:%.c=%.o)
 
-all:			$(NAME) 
-				
-$(NAME):		$(OBJS) $(LIBFT_A) 
+all:			$(NAME)
+
+$(NAME):		$(OBJS) $(LIBFT_A)
 				@$(CC) $(CFLAGS) $(OBJS) -L$(LIBFT) -lft -o $(NAME)
 				@echo "Linked into executable \033[0;32mpush_swap\033[0m."
 
 %.o:			%.c
 				@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 				@echo "Compiling $<."
-				
+
 $(LIBFT_A):
 				@$(MAKE) -s -C $(LIBFT)
 				@echo "Compiled $(LIBFT_A)."
-				 
+
 localclean:
 				@$(RM) $(OBJS)
 				@echo "Removed object files."
