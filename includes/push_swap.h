@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:10:25 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/23 01:25:38 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/23 01:30:09 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void			swap_data(t_data *data);
 rotate.c
 */
 void			rot(t_stack *stack);
-void			rot_data(t_data *data);
+void 			rot_data(t_data *data, void (*f)());
 
 /*
 check.c

@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:13:31 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/21 16:48:29 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/23 01:38:05 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,19 @@ void	fill_stack(t_stack *stack, int argc, char **argv)
 
 	i = 1;
 	node = stack->head;
+	if (!node)
+	{
+		node = create_node(0, ft_atoi(argv[1]));
+		stack->head = node;
+	}
 	while (++i < argc)
 	{
 		node->next = create_node(i - 1, ft_atoi(argv[i]));
 		node->next->prev = node;
 		node = node->next;
 	}
-	if (stack->tail->val != node->val)
-		ft_error();
+	if (stack->tail)
+		if (stack->tail->val != node->val)
+			ft_error();
+	stack->tail = node;
 }
