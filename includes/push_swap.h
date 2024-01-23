@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:10:25 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/24 00:08:42 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/24 00:10:18 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,11 @@ void			swap_data(t_data *data);
 /*
 rotate.c
 */
+
 void			rr(t_data *data);
 void			rot(t_stack *stack);
+void			ra(t_stack *stack_a);
+void			rb(t_stack *stack_b);
 void			rrot(t_stack *stack);
 void 			rot_data(t_data *data, void (*f)());
 
@@ -79,6 +82,8 @@ void 			rot_data(t_data *data, void (*f)());
 rev_rotate.c
 */
 void			rrot(t_stack *stack);
+void			rra(t_stack *stack_a);
+void			rrb(t_stack *stack_b);
 
 /*
 check.c
