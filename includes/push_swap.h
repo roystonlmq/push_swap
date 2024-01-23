@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:10:25 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/24 00:13:30 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/24 00:19:14 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,12 @@ void			print_stack(t_stack *stack);
 /*
 sort_2.c
 */
+void			sort_2(t_data *data);
+
+/*
+sort_3.c
+*/
+void			sort_3(t_data *data);
 
 /*
 print_op.c
