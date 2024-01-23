@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:50:31 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/23 20:31:28 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/24 00:08:51 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,23 +31,16 @@ void	rot(t_stack *stack)
 	stack->tail = temp; // tail = 1
 }
 
-/*
-rrot: reverse rotate - shift down all elements of a stack by 1. The last
-element becomes the first.
-*/
-void	rrot(t_stack *stack)
+void	ra(t_stack *stack)
 {
-	t_node	*tail;
+	rot(stack);
+	ft_printf("ra\n");
+}
 
-	if (stack == NULL || stack->tail == NULL)
-		return ;
-	tail = stack->tail;
-	stack->tail = stack->tail->prev;
-	stack->tail->next = NULL;
-	tail->prev = NULL;
-	tail->next = stack->head;
-	stack->head->prev = tail;
-	stack->head = tail;
+void	rb(t_stack *stack)
+{
+	rot(stack);
+	ft_printf("rb\n");
 }
 
 /*
@@ -57,4 +50,10 @@ void rot_data(t_data *data, void (*f)())
 {
 	f(data->stack_a);
 	f(data->stack_b);
+}
+
+void rr(t_data *data)
+{
+	rot_data(data, &rot);
+	ft_printf("rr\n");
 }
