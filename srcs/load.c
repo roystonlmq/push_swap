@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:13:31 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/23 02:04:29 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/23 20:28:36 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,5 @@ void	fill_stack(t_stack *stack, int argc, char **argv)
 		node->next->prev = node;
 		node = node->next;
 	}
-	if (stack->tail)
-		if (stack->tail->val != node->val)
-			ft_error();
+	stack->tail = node;
 }

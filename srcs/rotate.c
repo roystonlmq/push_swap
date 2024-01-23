@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:50:31 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/23 02:07:26 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/23 20:31:28 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@ element becomes the last one.
 */
 void	rot(t_stack *stack)
 {
-	t_node	*head;
+	t_node	*temp;
 
 	if (stack == NULL || stack->head == NULL)
 		return ;
-	head = stack->head;
-	stack->head = stack->head->next;
-	stack->head->prev = NULL;
-	head->next = NULL;
-	head->prev = stack->tail;
-	stack->tail->next = head;
-	stack->tail = head;
+	temp = stack->head; // temp = 1
+	stack->head = stack->head->next; // head = 2
+	stack->head->next->next = temp; // tail->next = 1
+	temp->next = NULL; // 1->next = NULL
+	temp->prev = stack->head->next->next; // 1->prev = 2
+	stack->head->prev = NULL; // 2->prev = NULL
+	stack->tail = temp; // tail = 1
 }
 
 /*
