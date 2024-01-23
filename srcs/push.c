@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:35:12 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/23 20:56:51 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/24 00:13:03 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,16 @@ void	push(t_stack *to, t_stack *fm)
 		to->head->next = tmp; // 7->next = 1
 		tmp->prev = to->head; // 1->prev = 7
 	}
+}
+
+void	pa(t_data *data)
+{
+	push(data->stack_a, data->stack_b);
+	ft_printf("pa\n");
+}
+
+void	pb(t_data *data)
+{
+	push(data->stack_b, data->stack_a);
+	ft_printf("pb\n");
 }
