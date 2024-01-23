@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:10:25 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/23 20:48:59 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/23 21:26:01 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,13 @@ void			ft_error(void);
 print.c
 */
 void			print_stack(t_stack *stack);
+
+/*
+sort_2.c
+*/
+
+/*
+print_op.c
+*/
+void			print_op(char *op);
 #endif
