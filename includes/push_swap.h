@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:10:25 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/23 01:42:21 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/23 20:48:59 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,11 @@ void			init_stacks(t_data *data, int argc, char **argv);
 load.c
 */
 void			fill_stack(t_stack *stack, int argc, char **argv);
+
+/*
+push.c
+*/
+void			push(t_stack *stack_a, t_stack *stack_b);
 
 /*
 swap.c
