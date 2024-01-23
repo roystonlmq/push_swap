@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 01:22:09 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/23 01:28:19 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/24 00:02:53 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,17 @@ void	swap_data(t_data *data)
 {
 	swap(data->stack_a);
 	swap(data->stack_b);
+	ft_printf("ss\n");
+}
+
+void	sa(t_stack *stack)
+{
+	swap(stack);
+	ft_printf("sa\n");
+}
+
+void	sb(t_stack *stack)
+{
+	swap(stack);
+	ft_printf("sb\n");
 }
