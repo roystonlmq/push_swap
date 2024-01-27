@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:10:25 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/27 23:50:17 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/28 00:29:04 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void			init_stacks(t_data *data, int argc, char **argv);
 load.c
 */
 void			fill_stack(t_stack *stack, int argc, char **argv);
+void			reindex_stack(t_stack *stack);
 
 /*
 push.c
@@ -111,8 +112,8 @@ void			print_op(char *op);
 /*
 utils.c
 */
-int				get_min(t_stack *stack);
-int				get_max(t_stack *stack);
+t_node			*get_min_node(t_stack *stack);
+t_node			*get_max_node(t_stack *stack);
 
 // DIR: sort
 /*
