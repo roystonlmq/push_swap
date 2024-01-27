@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:10:25 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/27 23:12:48 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/27 23:50:17 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,17 @@ print.c
 */
 void			print_stack(t_stack *stack);
 
+/*
+print_op.c
+*/
+void			print_op(char *op);
+
+/*
+utils.c
+*/
+int				get_min(t_stack *stack);
+int				get_max(t_stack *stack);
+
 // DIR: sort
 /*
 sort_flow.c
@@ -125,7 +136,7 @@ sort_3.c
 void			sort_3(t_data *data);
 
 /*
-print_op.c
+sort_4.c
 */
-void			print_op(char *op);
+void			sort_4(t_data *data);
 #endif

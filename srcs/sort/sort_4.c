@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   sort_4.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/21 16:11:17 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/27 23:52:47 by roylee           ###   ########.fr       */
+/*   Created: 2024/01/27 23:17:32 by roylee            #+#    #+#             */
+/*   Updated: 2024/01/27 23:51:44 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
-Prints out the nodes, their content in the stack
-*/
-void	print_stack(t_stack *stack)
-{
-	t_node	*node;
+sort_4.c
 
-	node = stack->head;
-	while (node)
+sort 4 numbers using 2 stacks
+*/
+void	sort_4(t_data *data)
+{
+	int		i;
+	int		min;
+	int		max;
+
+	i = 0;
+	min = get_min(data->stack_a);
+	max = get_max(data->stack_a);
+	while (i < 4)
 	{
-		printf("node->idx: %d\n", node->idx);
-		printf("node->val: %d\n\n", node->val);
-		node = node->next;
+		if (data->stack_a->head->val == min || data->stack_a->head->val == max)
+			pb(data);
+		else
+			ra(data->stack_a);
+		i++;
+		printf("%d \n", i);
 	}
+	sort_3(data);
+	pa(data);
 }

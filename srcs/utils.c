@@ -1,29 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/21 16:11:17 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/27 23:52:47 by roylee           ###   ########.fr       */
+/*   Created: 2024/01/27 23:48:13 by roylee            #+#    #+#             */
+/*   Updated: 2024/01/27 23:49:14 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*
-Prints out the nodes, their content in the stack
-*/
-void	print_stack(t_stack *stack)
+int		get_min(t_stack *stack)
 {
 	t_node	*node;
+	int		min;
 
 	node = stack->head;
+	min = node->val;
 	while (node)
 	{
-		printf("node->idx: %d\n", node->idx);
-		printf("node->val: %d\n\n", node->val);
+		if (node->val < min)
+			min = node->val;
 		node = node->next;
 	}
+	return (min);
+}
+
+int		get_max(t_stack *stack)
+{
+	t_node	*node;
+	int		max;
+
+	node = stack->head;
+	max = node->val;
+	while (node)
+	{
+		if (node->val > max)
+			max = node->val;
+		node = node->next;
+	}
+	return (max);
 }
