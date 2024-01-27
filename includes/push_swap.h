@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:10:25 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/24 00:19:14 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/27 23:12:48 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,17 @@ void			ft_error(void);
 print.c
 */
 void			print_stack(t_stack *stack);
+
+// DIR: sort
+/*
+sort_flow.c
+*/
+void			sort_flow(t_data *data);
+
+/*
+is_sorted.c
+*/
+int			is_sorted(t_stack *stack);
 
 /*
 sort_2.c

@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_flow.c                                        :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 00:21:13 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/27 23:16:47 by roylee           ###   ########.fr       */
+/*   Created: 2024/01/27 23:08:38 by roylee            #+#    #+#             */
+/*   Updated: 2024/01/27 23:08:50 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*
-sort_flow.c
-
-Manages what sort to use based on the situation
-*/
-void	sort_flow(t_data *data)
+int		is_sorted(t_stack *stack)
 {
-	if (is_sorted(data->stack_a))
-		return ;
-	if (data->stack_a->size == 2)
-		sa(data->stack_a);
-	else if (data->stack_a->size == 3)
-		sort_3(data);
-	else if (data->stack_a->size == 4)
-		sort_4(data);
+	t_node	*node;
 
-
+	node = stack->head;
+	while (node->next)
+	{
+		if (node->val > node->next->val)
+			return (0);
+		node = node->next;
+	}
+	return (1);
 }
