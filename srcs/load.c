@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:13:31 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/28 00:40:10 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/28 00:44:37 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	reindex_stack(t_stack *stack)
 
 	i = 0;
 	head = get_min_node(stack);
-	while (head)
+	while (i < stack->size)
 	{
 		head->idx = i;
 		head = get_min_node(stack);

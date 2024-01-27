@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 23:48:13 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/28 00:40:32 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/28 00:49:17 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ t_node	*get_min_node(t_stack *stack)
 			min_node = node;
 		}
 		node = node->next;
+		printf("test");
 	}
 	return (min_node);
 }
