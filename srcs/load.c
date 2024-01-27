@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:13:31 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/23 20:28:36 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/28 00:40:10 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,34 @@ void	fill_stack(t_stack *stack, int argc, char **argv)
 	node = stack->head;
 	if (!node)
 	{
-		node = create_node(0, ft_atoi(argv[1]));
+		node = create_node(ft_atoi(argv[1]));
 		stack->head = node;
 	}
 	while (++i < argc)
 	{
-		node->next = create_node(i - 1, ft_atoi(argv[i]));
+		node->next = create_node(ft_atoi(argv[i]));
 		node->next->prev = node;
 		node = node->next;
 	}
 	stack->tail = node;
+}
+
+/*
+reindex stack:
+Since there are no duplicates, we can reindex the stack with
+0 to N - 1 values where N is the size of the stack
+*/
+void	reindex_stack(t_stack *stack)
+{
+	t_node	*head;
+	int		i;
+
+	i = 0;
+	head = get_min_node(stack);
+	while (head)
+	{
+		head->idx = i;
+		head = get_min_node(stack);
+		i++;
+	}
 }
