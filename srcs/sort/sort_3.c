@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 00:16:42 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/27 23:04:03 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/27 23:07:22 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	sort_3(t_data *data)
 	a = data->stack_a->head->val;
 	b = data->stack_a->head->next->val;
 	c = data->stack_a->head->next->next->val;
-	printf("a: %d, b: %d, c: %d\n", a, b, c);
 	if (a < b && b > c && a < c)
 	{
 		sa(data->stack_a);
