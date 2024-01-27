@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 23:48:13 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/28 00:28:12 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/28 00:40:32 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ t_node	*get_min_node(t_stack *stack)
 	min = node->val;
 	while (node)
 	{
-		if (node->val < min)
+		if (node->val < min && node->idx == -1)
 		{
 			min = node->val;
 			min_node = node;
 		}
 		node = node->next;
 	}
-	return (node);
+	return (min_node);
 }
 
 t_node	*get_max_node(t_stack *stack)
@@ -50,5 +50,5 @@ t_node	*get_max_node(t_stack *stack)
 		}
 		node = node->next;
 	}
-	return (node);
+	return (max_node);
 }
