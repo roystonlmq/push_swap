@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:50:31 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/28 15:17:18 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/28 16:12:25 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	rot(t_stack *stack)
 
 	if (stack == NULL || stack->head == NULL)
 		return ;
+	print_stack(stack);
 	hd = stack->head;
 	tl = stack->tail;
 	stack->head = hd->next;
@@ -30,6 +31,7 @@ void	rot(t_stack *stack)
 	tl->next = hd;
 	hd->prev = tl;
 	hd->next = NULL;
+	stack->tail = hd;
 }
 
 void	ra(t_stack *stack)
