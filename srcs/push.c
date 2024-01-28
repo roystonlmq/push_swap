@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:35:12 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/28 15:01:41 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/28 16:01:38 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,33 @@ the first argument*/
 void	push(t_stack *to, t_stack *fm)
 {
 	t_node	*tmp;
+	t_node	*to_hd;
+	t_node	*fm_hd;
 
-	if (!fm)
+	if (fm->size == 0)
 		return ;
+	to_hd = to->head;
+	fm_hd = fm->head;
+	tmp = fm_hd;
 	if (!to->head)
 	{
-		to->head = fm->head;
-		to->tail = fm->head;
 		fm->head = fm->head->next;
-		fm->head->prev = NULL;
-		to->head->next = NULL;
+		if (fm->head)
+			fm->head->prev = NULL;
+		to_hd = tmp;
+		to_hd->next = NULL;
+		to_hd->prev = NULL;
+		to->tail = to->head;
+		to->head = to_hd;
 	}
 	else
 	{
-		tmp = to->head;  // tmp = 1
-		to->head = fm->head; // head = 7
-		to->head->next = tmp; // 7->next = 1
-		tmp->prev = to->head; // 1->prev = 7
+		fm->head = fm->head->next;
+		if (fm->head)
+			fm->head->prev = NULL;
+		tmp->next = to_hd;
+		to_hd->prev = tmp;
+		to->head = tmp;
 	}
 	to->size++;
 	fm->size--;
