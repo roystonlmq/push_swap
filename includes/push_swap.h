@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:10:25 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/28 00:39:58 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/28 15:07:05 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,8 @@ void			ft_error(void);
 print.c
 */
 void			print_stack(t_stack *stack);
+void			print_b(t_stack *stack);
+void			print_data(t_data *data);
 
 /*
 print_op.c
@@ -112,6 +114,8 @@ void			print_op(char *op);
 /*
 utils.c
 */
+int				find_idx(t_stack *stack, int idx);
+int				min_idx(t_stack *stack, int p_idx);
 t_node			*get_min_node(t_stack *stack);
 t_node			*get_max_node(t_stack *stack);
 
