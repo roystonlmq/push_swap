@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_flow.c                                        :+:      :+:    :+:   */
+/*   sort_5.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 00:21:13 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/28 16:17:53 by roylee           ###   ########.fr       */
+/*   Created: 2024/01/28 16:17:58 by roylee            #+#    #+#             */
+/*   Updated: 2024/01/28 16:20:40 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
-sort_flow.c
-
-Manages what sort to use based on the situation
+sort_5: uses the 3/2 strategy to sort 5 numbers
 */
-void	sort_flow(t_data *data)
+void	sort_5(t_data *data)
 {
+	int	idx;
+
+	idx = find_idx(data->stack_a, min_idx(data->stack_a, -1));
+	if (idx == 1)
+		ra(data->stack_a);
+	else if (idx == 2)
+	{
+		ra(data->stack_a);
+		ra(data->stack_a);
+	}
+	else if (idx == 3)
+	{
+		rra(data->stack_a);
+		rra(data->stack_a);
+	}
+	else if (idx == 4)
+		rra(data->stack_a);
 	if (is_sorted(data->stack_a))
 		return ;
-	if (data->stack_a->size == 2)
-		sa(data->stack_a);
-	else if (data->stack_a->size == 3)
-		sort_3(data);
-	else if (data->stack_a->size == 4)
-		sort_4(data);
-	else if (data->stack_a->size == 5)
-		sort_5(data);
+	pb(data);
+	sort_4(data);
+	pa(data);
 }
