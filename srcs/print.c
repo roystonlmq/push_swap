@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:11:17 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/28 15:12:20 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/28 15:22:12 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	print_b(t_stack *stack)
 		printf("        %d idx: %d\n", node->val, node->idx);
 		node = node->next;
 	}
-	printf("--------a sz:%d\n", stack->size);
+	printf("--------b sz:%d\n", stack->size);
 }
 
 void	print_data(t_data *data)
