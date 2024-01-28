@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:10:25 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/28 15:07:05 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/28 20:39:49 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,4 +144,9 @@ void			sort_3(t_data *data);
 sort_4.c
 */
 void			sort_4(t_data *data);
+
+/*
+sort_5.c
+*/
+void			sort_5(t_data *data);
 #endif
