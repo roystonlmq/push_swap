@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 23:48:13 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/28 14:42:26 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/28 14:55:05 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
 Function to look for index
 */
-int		find_idx(t_stack *stack, int idx)
+int		find_idx(t_stack *stack, int find)
 {
 	t_node	*node;
 	int		idx;
@@ -24,12 +24,28 @@ int		find_idx(t_stack *stack, int idx)
 	node = stack->head;
 	while (node)
 	{
-		if (node->idx == idx)
+		if (node->idx == find)
 			return (idx);
 		idx++;
 		node = node->next;
 	}
 	return (-1);
+}
+
+int		min_idx(t_stack *stack, int p_idx)
+{
+	t_node	*node;
+	int		min;
+
+	node = stack->head;
+	min = node->idx;
+	while (node->next)
+	{
+		node = node->next;
+		if (node->idx < min && node->idx != p_idx)
+			min = node->idx;
+	}
+	return (min);
 }
 
 t_node	*get_min_node(t_stack *stack)
