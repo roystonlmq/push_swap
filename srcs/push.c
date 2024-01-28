@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:35:12 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/27 23:19:25 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/28 15:01:41 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,12 @@ void	pa(t_data *data)
 {
 	push(data->stack_a, data->stack_b);
 	ft_printf("pa\n");
+	print_data(data);
 }
 
 void	pb(t_data *data)
 {
 	push(data->stack_b, data->stack_a);
 	ft_printf("pb\n");
+	print_data(data);
 }
