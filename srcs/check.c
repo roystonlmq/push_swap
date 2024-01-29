@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 01:06:52 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/29 21:44:20 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/29 22:02:43 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,10 +83,10 @@ char	**check_args(int argc, char **argv)
 	{
 		if (check_num(args[i]) == -1)
 			err = 1;
-		if (check_dup(argc, args) == -1)
-			err = 1;
 		i++;
 	}
+	if (check_dup(argc, args) == -1)
+			err = 1;
 	if (err == 1)
 	{
 		free_split(args);
