@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 00:21:13 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/28 16:17:53 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/29 20:50:37 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,6 @@ void	sort_flow(t_data *data)
 		sort_4(data);
 	else if (data->stack_a->size == 5)
 		sort_5(data);
+	else
+		radix_sort(data);
 }
