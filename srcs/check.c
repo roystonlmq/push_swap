@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 01:06:52 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/28 21:23:01 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/29 20:19:11 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ static int	check_dup(int argc, char **argv)
 	int	arr[argc];
 	int	i;
 
+	len = argc;
+	ft_bzero(arr, sizeof(arr));
 	len = argc;
 	while (--len > 0)
 		arr[len] = ft_atoi(argv[len]);
@@ -57,7 +59,7 @@ char	**check_args(int argc, char **argv)
 		args = ft_split(argv[1], ' ');
 	else
 	{
-		i = 0;
+		i = 1;
 		args = argv;
 	}
 	while (args[i])
@@ -74,8 +76,6 @@ char	**check_args(int argc, char **argv)
 		}
 		i++;
 	}
-	if (argc == 2)
-		free_split(args);
 	return (args);
 }
 

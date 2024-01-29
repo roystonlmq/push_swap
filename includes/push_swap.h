@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:10:25 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/28 21:23:57 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/29 20:26:25 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,14 @@ init.c
 */
 t_data			*init_data(int argc);
 t_node			*create_node(int val);
-void			init_stacks(t_data *data, int argc, char **argv);
+void			init_stacks(t_data *data, int stack_size, int argc, 
+						char **args);
 
 /*
 load.c
 */
-void			fill_stack(t_stack *stack, int argc, char **argv);
+void			fill_stack(t_stack *stack, int stack_size, int argc, 
+						char **argv);
 void			reindex_stack(t_stack *stack);
 
 /*
