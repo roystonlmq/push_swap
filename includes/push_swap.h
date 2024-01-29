@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:10:25 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/29 20:26:25 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/29 21:45:50 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,7 @@ void			sort_flow(t_data *data);
 /*
 is_sorted.c
 */
-int			is_sorted(t_stack *stack);
+int				is_sorted(t_stack *stack);
 
 /*
 sort_2.c
@@ -160,4 +160,11 @@ void			sort_4(t_data *data);
 sort_5.c
 */
 void			sort_5(t_data *data);
+
+/*
+radix_sort.c
+*/
+int				max_bit_pos(t_stack *stack);
+void			radix_sort(t_data *data);
+
 #endif
