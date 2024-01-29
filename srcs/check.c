@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 01:06:52 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/28 00:04:36 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/28 21:23:01 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,25 +45,49 @@ Checks:
 - arguments are not bigger/smaller than INT_MAX/INT_MIN
 - arguments are not duplicated
 */
-void	check_args(int argc, char **argv)
+char	**check_args(int argc, char **argv)
 {
 	int		i;
 	int		j;
+	char	**args;
 
 	if (argc == 1)
 		ft_error();
-	i = argc;
-	while (i-- > 1)
+	if (argc == 2)
+		args = ft_split(argv[1], ' ');
+	else
 	{
-		j = ft_strlen(argv[i]);
+		i = 0;
+		args = argv;
+	}
+	while (args[i])
+	{
+		j = ft_strlen(args[i]);
 		while (j-- > 0)
 		{
-			if (ft_isdigit(argv[i][j]) == 0)
+			if (ft_isdigit(args[i][j]) == 0)
 				ft_error();
-			if (argv[i][j] == '-' && j != 0)
+			if (args[i][j] == '-' && j != 0)
 				ft_error();
-			if (check_dup(argc, argv) > 0)
+			if (check_dup(argc, args) > 0)
 				ft_error();
 		}
+		i++;
 	}
+	if (argc == 2)
+		free_split(args);
+	return (args);
+}
+
+/*
+count number of elements in an array
+*/
+int		count_args(char **args)
+{
+	int i;
+
+	i = 0;
+	while (args[i])
+		i++;
+	return (i);
 }
