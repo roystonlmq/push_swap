@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: roylee <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 12:32:14 by roylee            #+#    #+#             */
-/*   Updated: 2023/09/17 16:58:07 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/21 00:55:57 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,6 @@ int		ft_putunbr_base(unsigned long n, const char *base);
 int		ft_puthexa_u(unsigned long n, const char s);
 size_t	ft_nbrlen_base(long long int n, size_t base);
 size_t	ft_unbrlen_base(unsigned long n, size_t base);
-
-/* bonus */
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
@@ -76,5 +74,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-int	ft_printf(const char *format, ...);
+int		ft_printf(const char *format, ...);
+
 #endif

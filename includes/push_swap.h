@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:10:25 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/29 21:45:50 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/29 21:51:15 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 # include "libft.h"
 
-typedef struct	s_node
+typedef struct s_node
 {
 	struct s_node	*next;
 	struct s_node	*prev;
@@ -26,9 +26,9 @@ typedef struct	s_node
 	int				idx;
 }				t_node;
 
-typedef struct	s_stack
+typedef struct s_stack
 {
-	struct s_node 	*head;
+	struct s_node	*head;
 	struct s_node	*tail;
 	struct s_node	*next;
 	struct s_node	*prev;
@@ -48,13 +48,13 @@ init.c
 t_data			*init_data(int argc);
 t_node			*create_node(int val);
 void			init_stacks(t_data *data, int stack_size, int argc, 
-						char **args);
+					char **args);
 
 /*
 load.c
 */
 void			fill_stack(t_stack *stack, int stack_size, int argc, 
-						char **argv);
+					char **argv);
 void			reindex_stack(t_stack *stack);
 
 /*
@@ -81,7 +81,7 @@ void			rr(t_data *data);
 void			rot(t_stack *stack);
 void			ra(t_stack *stack_a);
 void			rb(t_stack *stack_b);
-void 			rot_data(t_data *data, void (*f)());
+void			rot_data(t_data *data, void (*f)());
 
 /*
 rev_rotate.c
