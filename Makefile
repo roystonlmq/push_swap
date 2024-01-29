@@ -6,7 +6,7 @@
 #    By: roylee <roylee@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/01 16:22:42 by sgoffaux          #+#    #+#              #
-#    Updated: 2024/01/28 20:39:31 by roylee           ###   ########.fr        #
+#    Updated: 2024/01/28 21:01:30 by roylee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CFLAGS		=	-Wall -Wextra -Werror -I$(INCLUDE) -g
 RM			=	rm -f
 SRCS		=	main.c srcs/check.c srcs/error.c srcs/init.c srcs/load.c \
 				srcs/print.c srcs/rotate.c srcs/swap.c srcs/push.c \
-				srcs/rev_rotate.c srcs/utils.c \
+				srcs/rev_rotate.c srcs/utils.c srcs/free.c \
 				srcs/sort/sort_2.c srcs/sort/sort_3.c srcs/sort/is_sorted.c \
 				srcs/sort/sort_flow.c srcs/sort/sort_4.c srcs/sort/sort_5.c
 

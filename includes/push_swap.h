@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:10:25 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/28 20:39:49 by roylee           ###   ########.fr       */
+/*   Updated: 2024/01/28 21:23:57 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,8 @@ void			rrr(t_data *data);
 /*
 check.c
 */
-void			check_args(int argc, char **argv);
+char			**check_args(int argc, char **argv);
+int				count_args(char **args);
 
 /*
 error.c
@@ -118,6 +119,14 @@ int				find_idx(t_stack *stack, int idx);
 int				min_idx(t_stack *stack, int p_idx);
 t_node			*get_min_node(t_stack *stack);
 t_node			*get_max_node(t_stack *stack);
+
+/*
+free.c
+*/
+void			free_stack(t_stack *stack);
+void			free_data(t_data *data);
+void			free_all(t_data *data);
+void			free_split(char **split);
 
 // DIR: sort
 /*
