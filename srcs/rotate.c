@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:50:31 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/28 16:12:25 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/01 23:37:56 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,13 @@ void	rb(t_stack *stack)
 /*
 rot_data: rotates stack A and stack B at the same time
 */
-void rot_data(t_data *data, void (*f)())
+void	rot_data(t_data *data, void (*f)())
 {
 	f(data->stack_a);
 	f(data->stack_b);
 }
 
-void rr(t_data *data)
+void	rr(t_data *data)
 {
 	rot_data(data, &rot);
 	ft_printf("rr\n");
