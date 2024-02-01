@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:10:25 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/29 21:51:15 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/01 22:37:26 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void			rrr(t_data *data);
 check.c
 */
 char			**check_args(int argc, char **argv);
-int				count_args(char **args);
+int				count_args(char **args, int i, int flag);
 
 /*
 error.c

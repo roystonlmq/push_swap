@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 20:57:20 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/28 21:01:23 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/01 22:37:17 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	free_all(t_data *data)
 
 void	free_split(char **str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
