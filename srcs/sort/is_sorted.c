@@ -6,13 +6,13 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 23:08:38 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/27 23:08:50 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/01 23:20:12 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		is_sorted(t_stack *stack)
+int	is_sorted(t_stack *stack)
 {
 	t_node	*node;
 
