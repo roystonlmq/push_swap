@@ -6,17 +6,34 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 01:06:52 by roylee            #+#    #+#             */
-/*   Updated: 2024/02/02 00:10:46 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/02 00:15:54 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static int	check_dup2(int len, int *arr)
+{
+	int	i;
+
+	i = 0;
+	while (len > 0)
+	{
+		while (len - 1 - i > 0)
+		{
+			if (arr[len - 1 - i] == arr[len])
+				return (-1);
+			i++;
+		}
+		len--;
+	}
+	return (0);
+}
+
 static int	check_dup(int argc, char **args, int flag)
 {
 	int	len;
 	int	*arr;
-	int	i;
 
 	arr = ft_calloc(argc + 1, sizeof(int));
 	len = argc;
@@ -30,17 +47,8 @@ static int	check_dup(int argc, char **args, int flag)
 	len = argc;
 	if (flag == 0)
 		len--;
-	i = 0;
-	while (len > 0)
-	{
-		while (len - 1 - i > 0)
-		{
-			if (arr[len - 1 - i] == arr[len])
-				return (-1);
-			i++;
-		}
-		len--;
-	}
+	if (check_dup2(len, arr) == -1)
+		return (-1);
 	free(arr);
 	return (0);
 }
