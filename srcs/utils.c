@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 23:48:13 by roylee            #+#    #+#             */
-/*   Updated: 2024/02/01 23:38:34 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/02 00:10:52 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,4 +89,16 @@ t_node	*get_max_node(t_stack *stack)
 		node = node->next;
 	}
 	return (max_node);
+}
+
+/*
+count number of elements in an array
+*/
+int		count_args(char **args, int i, int flag)
+{
+	while (args[i])
+		i++;
+	if (flag == 1)
+		i--;
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 01:06:52 by roylee            #+#    #+#             */
-/*   Updated: 2024/02/02 00:09:59 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/02 00:10:46 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,16 +105,4 @@ char	**check_args(int argc, char **argv, int i, int j)
 	if (err == 1)
 		ft_error();
 	return (args);
-}
-
-/*
-count number of elements in an array
-*/
-int		count_args(char **args, int i, int flag)
-{
-	while (args[i])
-		i++;
-	if (flag == 1)
-		i--;
-	return (i);
 }
