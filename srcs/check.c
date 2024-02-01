@@ -6,20 +6,20 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 01:06:52 by roylee            #+#    #+#             */
-/*   Updated: 2024/02/02 00:21:46 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/02 00:33:50 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	check_dup2(int len, int *arr)
+static int	check_dup2(int len, int j, int *arr)
 {
 	int	i;
 
 	i = 0;
-	while (len > 0)
+	while (len > j)
 	{
-		while (len - 1 - i > 0)
+		while (len - 1 - i > j)
 		{
 			if (arr[len - 1 - i] == arr[len])
 				return (-1);
@@ -34,12 +34,17 @@ static int	check_dup(int argc, char **args, int flag)
 {
 	int	len;
 	int	*arr;
+	int	i;
 
+	i = 0;
 	arr = ft_calloc(argc + 1, sizeof(int));
 	len = argc;
 	if (flag == 0)
+	{
 		len--;
-	while (len > 0)
+		i = -1;
+	}
+	while (len > i)
 	{
 		arr[len] = ft_atoi(args[len]);
 		len--;
@@ -47,7 +52,7 @@ static int	check_dup(int argc, char **args, int flag)
 	len = argc;
 	if (flag == 0)
 		len--;
-	if (check_dup2(len, arr) == -1)
+	if (check_dup2(len, i, arr) == -1)
 		return (-1);
 	free(arr);
 	return (0);
@@ -69,7 +74,7 @@ static int	check_num(char *n)
 	return (0);
 }
 
-static void	check_free_err(int i, int err, int flag, char **args)
+static int	check_free_err(int i, int err, int flag, char **args)
 {
 	int	j;
 	int	argc;
@@ -91,6 +96,7 @@ static void	check_free_err(int i, int err, int flag, char **args)
 	}
 	if (err == 1)
 		ft_error();
+	return (0);
 }
 
 /*
@@ -120,6 +126,7 @@ char	**check_args(int argc, char **argv, int i)
 		args = argv;
 		flag = 1;
 	}
-	check_free_err(i, err, flag, args);
-	return (args);
+	if (!check_free_err(i, err, flag, args))
+		return (args);
+	return (NULL);
 }
