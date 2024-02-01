@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 01:06:52 by roylee            #+#    #+#             */
-/*   Updated: 2024/02/02 00:33:50 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/02 00:39:19 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ static int	check_dup2(int len, int j, int *arr)
 {
 	int	i;
 
-	i = 0;
 	while (len > j)
 	{
-		while (len - 1 - i > j)
+		i = 0;
+		while (len - 1 - i > -1)
 		{
 			if (arr[len - 1 - i] == arr[len])
 				return (-1);
