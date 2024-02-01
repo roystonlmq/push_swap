@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 01:22:09 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/28 15:02:01 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/01 23:20:48 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ swap:
 */
 void	swap(t_stack *stack)
 {
-	int tmp;
+	int	tmp;
 
 	if (stack->size > 1)
 	{
