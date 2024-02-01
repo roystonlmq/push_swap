@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:13:31 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/29 20:26:13 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/02 01:07:38 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	fill_stack(t_stack *stack, int stack_size, int argc, char **args)
 	if (argc == 2)
 		i = 0;
 	else
-		i = 1;
+		i = 0;
 	node = stack->head;
 	if (!node)
 	{

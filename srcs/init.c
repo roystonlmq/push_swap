@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:24:20 by roylee            #+#    #+#             */
-/*   Updated: 2024/02/01 23:39:09 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/02 01:16:04 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	init_stacks(t_data *data, int stack_size, int argc, char **args)
 	if (!stack_b)
 		ft_error();
 	stack_b->head = NULL;
-	stack_a->size = stack_size - 1;
+	stack_a->size = stack_size;
 	stack_b->size = 0;
 	if (argc == 2)
 	{
@@ -50,7 +50,7 @@ void	init_stacks(t_data *data, int stack_size, int argc, char **args)
 		stack_a->head = create_node(ft_atoi(args[0]));
 	}
 	else
-		stack_a->head = create_node(ft_atoi(args[1]));
+		stack_a->head = create_node(ft_atoi(args[0]));
 	if (stack_a->size <= 1)
 		exit(0);
 	data->stack_a = stack_a;
