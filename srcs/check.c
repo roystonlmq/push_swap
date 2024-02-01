@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 01:06:52 by roylee            #+#    #+#             */
-/*   Updated: 2024/02/01 23:33:51 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/02 00:09:59 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,8 @@ Checks:
 - arguments are not bigger/smaller than INT_MAX/INT_MIN
 - arguments are not duplicated
 */
-char	**check_args(int argc, char **argv)
+char	**check_args(int argc, char **argv, int i, int j)
 {
-	int		i;
-	int		j;
 	int		flag;
 	int		err;
 	char	**args;

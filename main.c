@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:24:02 by roylee            #+#    #+#             */
-/*   Updated: 2024/02/01 23:36:38 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/02 00:10:03 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 	char	**args;
 	int		stack_size;
 
-	args = check_args(argc, argv);
+	args = check_args(argc, argv, 0, 0);
 	stack_size = count_args(args, 0, 0);
 	data = init_data(argc);
 	init_stacks(data, stack_size, argc, args);
