@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 23:48:13 by roylee            #+#    #+#             */
-/*   Updated: 2024/01/28 14:55:05 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/01 23:38:34 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
 Function to look for index
 */
-int		find_idx(t_stack *stack, int find)
+int	find_idx(t_stack *stack, int find)
 {
 	t_node	*node;
 	int		idx;
@@ -32,7 +32,7 @@ int		find_idx(t_stack *stack, int find)
 	return (-1);
 }
 
-int		min_idx(t_stack *stack, int p_idx)
+int	min_idx(t_stack *stack, int p_idx)
 {
 	t_node	*node;
 	int		min;
