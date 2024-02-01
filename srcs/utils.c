@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 23:48:13 by roylee            #+#    #+#             */
-/*   Updated: 2024/02/02 00:10:52 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/02 00:16:07 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ t_node	*get_max_node(t_stack *stack)
 /*
 count number of elements in an array
 */
-int		count_args(char **args, int i, int flag)
+int	count_args(char **args, int i, int flag)
 {
 	while (args[i])
 		i++;
