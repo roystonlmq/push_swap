@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 01:06:52 by roylee            #+#    #+#             */
-/*   Updated: 2024/02/02 00:17:08 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/02 00:21:46 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,30 @@ static int	check_num(char *n)
 	return (0);
 }
 
+static void	check_free_err(int i, int err, int flag, char **args)
+{
+	int	j;
+	int	argc;
+
+	j = i;
+	while (args[i])
+	{
+		if (check_num(args[i]) == -1)
+			err = 1;
+		i++;
+	}
+	argc = count_args(args, j, flag);
+	if (check_dup(argc, args, flag) == -1)
+		err = 1;
+	if (err == 1 && flag == 0)
+	{
+		free_split(args);
+		ft_error();
+	}
+	if (err == 1)
+		ft_error();
+}
+
 /*
 check_args:
 
@@ -77,7 +101,7 @@ Checks:
 - arguments are not bigger/smaller than INT_MAX/INT_MIN
 - arguments are not duplicated
 */
-char	**check_args(int argc, char **argv, int i, int j)
+char	**check_args(int argc, char **argv, int i)
 {
 	int		flag;
 	int		err;
@@ -96,22 +120,6 @@ char	**check_args(int argc, char **argv, int i, int j)
 		args = argv;
 		flag = 1;
 	}
-	j = i;
-	while (args[i])
-	{
-		if (check_num(args[i]) == -1)
-			err = 1;
-		i++;
-	}
-	argc = count_args(args, j, flag);
-	if (check_dup(argc, args, flag) == -1)
-		err = 1;
-	if (err == 1 && flag == 0)
-	{
-		free_split(args);
-		ft_error();
-	}
-	if (err == 1)
-		ft_error();
+	check_free_err(i, err, flag, args);
 	return (args);
 }
