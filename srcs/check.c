@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 01:06:52 by roylee            #+#    #+#             */
-/*   Updated: 2024/02/01 22:53:10 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/01 23:33:51 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 static int	check_dup(int argc, char **args, int flag)
 {
 	int	len;
-	int	arr[argc];
+	int	*arr;
 	int	i;
 
+	arr = ft_calloc(argc + 1, sizeof(int));
 	len = argc;
-	ft_bzero(arr, sizeof(arr));
 	if (flag == 0)
 		len--;
 	while (len > 0)
@@ -33,17 +33,15 @@ static int	check_dup(int argc, char **args, int flag)
 	i = 0;
 	while (len > 0)
 	{
-		i = len;
-		while (i > 0)
+		while (len - 1 - i > 0)
 		{
-			if (arr[len] == arr[i])
+			if (arr[len - 1 - i] == arr[len])
 				return (-1);
-			if (arr[len] > INT_MAX || arr[len] < INT_MIN)
-				return(-1);
-			i--;
+			i++;
 		}
 		len--;
 	}
+	free(arr);
 	return (0);
 }
 
