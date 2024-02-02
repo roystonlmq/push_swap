@@ -6,13 +6,15 @@
 #    By: roylee <roylee@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/01 16:22:42 by sgoffaux          #+#    #+#              #
-#    Updated: 2024/01/29 20:50:51 by roylee           ###   ########.fr        #
+#    Updated: 2024/02/02 23:38:15 by roylee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	push_swap
 LIBFT		=	libft/
+GNL			=	get_next_line/
 LIBFT_A		=	$(addprefix $(LIBFT), libft.a)
+GNL_A		=	$(addprefix $(GNL), libgnl.a)
 
 CC			=	gcc
 INCLUDE 	=	includes
@@ -29,7 +31,7 @@ OBJS		=	$(SRCS:%.c=%.o)
 
 all:			$(NAME)
 
-$(NAME):		$(OBJS) $(LIBFT_A)
+$(NAME):		$(OBJS) $(LIBFT_A) $(GNL_A)
 				@$(CC) $(CFLAGS) $(OBJS) -L$(LIBFT) -lft -o $(NAME)
 				@echo "Linked into executable \033[0;32mpush_swap\033[0m."
 
@@ -41,16 +43,22 @@ $(LIBFT_A):
 				@$(MAKE) -s -C $(LIBFT)
 				@echo "Compiled $(LIBFT_A)."
 
+$(GNL_A):
+				@$(MAKE) -s -C $(GNL)
+				@echo "Compiled $(GNL_A)."
+
 localclean:
 				@$(RM) $(OBJS)
 				@echo "Removed object files."
 
 clean:			localclean
 				@$(MAKE) clean -s -C $(LIBFT)
+				@$(MAKE) clean -s -C $(GNL)
 				@echo "Clean libft."
 
 fclean:			localclean
 				@$(MAKE) fclean -s -C $(LIBFT)
+				@$(MAKE) fclean -s -C $(GNL)
 				@echo "Full clean libft."
 				@$(RM) $(NAME)
 				@echo "Removed executable."
