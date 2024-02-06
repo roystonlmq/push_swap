@@ -6,16 +6,16 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 12:35:17 by roylee            #+#    #+#             */
-/*   Updated: 2024/02/06 20:04:56 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/06 20:22:10 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long	ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
-	long	sign;
-	long	result;
+	int	sign;
+	int	result;
 
 	sign = 1;
 	result = 0;
@@ -32,6 +32,23 @@ long	ft_atoi(const char *nptr)
 	return (result * sign);
 }
 
+long	ft_atol(const char *nptr)
+{
+	long	sign;
+	long	result;
+
+	sign = 1;
+	result = 0;
+	if (*nptr == '+' || *nptr == '-')
+	{
+		if (*nptr == '-')
+			sign = -1;
+		nptr++;
+	}
+	while (*nptr >= '0' && *nptr <= '9')
+		result = (*(nptr++) - '0') + result * 10;
+	return (result * sign);
+}
 /*
 #include <stdio.h>
 int	main(void)

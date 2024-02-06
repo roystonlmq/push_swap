@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 12:32:14 by roylee            #+#    #+#             */
-/*   Updated: 2024/02/06 20:05:42 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/06 20:23:07 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
-long	ft_atoi(const char	*nptr);
+int		ft_atoi(const char	*nptr);
+long	ft_atol(const char *nptr);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
