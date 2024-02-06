@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 01:06:52 by roylee            #+#    #+#             */
-/*   Updated: 2024/02/06 20:08:00 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/06 20:23:45 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,15 +76,17 @@ static int	check_num(char *n)
 
 static int	check_free_err(int i, int err, int flag, char **args)
 {
-	int	j;
-	int	argc;
+	int		j;
+	int		argc;
+	long	tmp;
 
 	j = i;
 	while (args[i])
 	{
+		tmp = atol(args[i]);
 		if (check_num(args[i]) == -1)
 			err = 1;
-		if (ft_atoi(args[i]) > INT_MAX || ft_atoi(args[i]) < INT_MIN)
+		if (tmp < INT_MIN || tmp > INT_MAX)
 			err = 1;
 		i++;
 	}
