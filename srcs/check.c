@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 01:06:52 by roylee            #+#    #+#             */
-/*   Updated: 2024/02/06 20:32:30 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/06 21:33:24 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,9 @@ static int	check_free_err(int i, int err, int flag, char **args)
 	while (args[i])
 	{
 		tmp = atol(args[i]);
-		if (check_num(args[i]) == -1)
-			err = 1;
 		if (tmp < INT_MIN || tmp > INT_MAX)
+			err = 1;
+		if (check_num(args[i]) == -1)
 			err = 1;
 		i++;
 	}
@@ -98,7 +98,7 @@ static int	check_free_err(int i, int err, int flag, char **args)
 		free_split(args);
 		ft_error();
 	}
-	if (err == 1)
+	if (err == 1 || !args[j])
 		ft_error();
 	return (0);
 }
@@ -121,10 +121,10 @@ char	**check_args(int argc, char **argv, int i)
 	flag = 0;
 	i = 0;
 	if (argc == 1)
-		ft_error();
+		return (NULL);
 	if (argc == 2)
 	{
-		if (!argv[1])
+		if (!argv[1][0])
 			return (NULL);
 		args = ft_split(argv[1], ' ');
 	}
