@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 01:06:52 by roylee            #+#    #+#             */
-/*   Updated: 2024/02/06 20:23:45 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/06 20:32:30 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,11 @@ char	**check_args(int argc, char **argv, int i)
 	if (argc == 1)
 		ft_error();
 	if (argc == 2)
+	{
+		if (!argv[1])
+			return (NULL);
 		args = ft_split(argv[1], ' ');
+	}
 	else
 	{
 		i = 1;
