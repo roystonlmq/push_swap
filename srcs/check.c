@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 01:06:52 by roylee            #+#    #+#             */
-/*   Updated: 2024/02/06 20:32:30 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/08 21:01:30 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ static int	check_free_err(int i, int err, int flag, char **args)
 		free_split(args);
 		ft_error();
 	}
-	if (err == 1)
+	if (err == 1 || argc == 0)
 		ft_error();
 	return (0);
 }
@@ -121,7 +121,7 @@ char	**check_args(int argc, char **argv, int i)
 	flag = 0;
 	i = 0;
 	if (argc == 1)
-		ft_error();
+		exit(-1);
 	if (argc == 2)
 	{
 		if (!argv[1])
@@ -130,7 +130,7 @@ char	**check_args(int argc, char **argv, int i)
 	}
 	else
 	{
-		i = 1;
+		i = 0;
 		args = argv + 1;
 		flag = 1;
 	}

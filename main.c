@@ -6,7 +6,7 @@
 /*   By: roylee <roylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:24:02 by roylee            #+#    #+#             */
-/*   Updated: 2024/02/06 20:33:39 by roylee           ###   ########.fr       */
+/*   Updated: 2024/02/08 21:01:05 by roylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 	int		stack_size;
 
 	args = check_args(argc, argv, 0);
-	if (!*args)
+	if (!args)
 		ft_error();
 	stack_size = count_args(args, 0, 0);
 	data = init_data(argc);
